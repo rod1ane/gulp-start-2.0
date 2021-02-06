@@ -82,7 +82,7 @@ function styles() {
 function startwatch() {
   watch('app/sass/**/*.sass', styles)
   watch('app/html-include/**/*.html', html)
-  watch(['app/**/*.js', 'app/js/common.js'], series(commonJs, scripts))
+  watch(['app/**/*.js', 'app/js/common.js','!app/**/*.min.js'], series(commonJs, scripts))
   watch(`app/**/*.{${fileswatch}}`).on('change', sync.reload)
 }
 
