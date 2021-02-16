@@ -16,6 +16,7 @@ const notify = require('gulp-notify')
 const concat = require('gulp-concat')
 const fileinclude = require('gulp-file-include')
 const imagemin     = require('gulp-imagemin')
+const babel     = require('gulp-babel')
 function html() {
   return src('app/html-include/**/*.html')
     .pipe(fileinclude({
@@ -26,6 +27,9 @@ function html() {
 
 function commonJs() {
   return src('app/js/common.js')
+    .pipe(babel({
+      presets: ["@babel/preset-env"]
+    }))
     .pipe(concat('common.min.js'))
     .pipe(dest('app/js'))
 }
@@ -44,6 +48,7 @@ function scripts() {
       // 'app/libs/jquery.mmenu.all.min.js',
       // 'app/libs/rellax.min.js',
       // 'app/libs/handorgel.min.js',
+      // 'app/libs/jquery.selectric.js',
       'app/js/common.min.js', // Всегда в конце
     ])
     .pipe(concat('scripts.min.js'))

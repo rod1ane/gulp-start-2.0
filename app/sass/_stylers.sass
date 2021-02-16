@@ -93,7 +93,7 @@ $browser-context: 16
 
 
 // ADOBE LATTER SPACING
-@function letter-spacing($spacing)
+@function ls($spacing)
   @return #{($spacing / 1000) * 1em}
 //END
 .ie-fit
@@ -113,10 +113,10 @@ p
 a
 	text-decoration: none
 	color: inherit
-
+br + br
+	display: none
 .b-wrap
 	position: relative
-	overflow: hidden
 .responsive-img
 	display: block
 	width: 100%
