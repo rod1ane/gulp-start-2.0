@@ -36,7 +36,7 @@ function commonJs() {
 
 function scripts() {
   return src([
-      'app/libs/jquery/dist/jquery.min.js',
+      // 'app/libs/jquery/dist/jquery.min.js',
       // 'app/libs/owl-carousel/owl.carousel.js',
       // 'app/libs/jquery.formstyler.js',
       'app/libs/jquery.matchHeight-min.js',
